@@ -1,0 +1,114 @@
+     
+     <!DOCTYPE html>
+     <html lang="en">
+     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+     </head>
+     <body>
+        
+    <div class="car row"></div>
+    <script>
+     let cardsData = [
+            {
+                id : 1,
+                img: "03acd0036449a785b2f03f906ff60720.jpg",
+                title: "Acer Chrome Book",
+                text: "Acer c720 model chrome book window based 4 gb ram 120 gb ssd",
+                price: 35000,
+                link: "#"
+            },
+            {
+                id : 2,
+                img: "iPhone-17-Pro-Max-2025-Release-Date-Price-Specs-Features.png",
+                title: "iPHONE 17 PRO MAX",
+                text: "iPhone 17 PRO MAX NEW MODEL iPhone IS AVAILABLE",
+                price: 600000,
+                link: "#"
+            },
+            {
+                id : 3,
+                img: "https://static-01.daraz.pk/p/434b54f12ec09c3de1c8e7685bdbdfee.jpg",
+                title: "RGB Gaming Mouse",
+                text: "Usb RGB Gaming Mouse",
+                price: 6000,
+                link: "#"
+            }
+        ];
+
+        let container = document.querySelector(".car");
+        // let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        cardsData.forEach((c, index) => {
+            container.innerHTML += `
+                <div class="col-md-4 d-flex">
+                    <div class="card flex-fill" style="width:18rem;">
+                        <img src="${c.img}" class="card-img-top" alt="${c.title}">
+                        <div class="card-body">
+                            <h5 class="card-title">${c.title}</h5>
+                            <p class="card-text">${c.text}</p>
+                            <p class="card-text"><b>Price: Rs. ${c.price}</b></p>
+                            <button class="btn btn-success add-to-cart" data-index="${index}">
+                                🛒 Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+        let data1 = ()=>{
+            
+        }
+</script>
+<style>
+    
+/* Dark Cards */
+.card {
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d) !important;
+    border: 1px solid #333 !important;
+    border-radius: 15px !important;
+    margin: 15px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5) !important;
+    margin-left: 8vh !important;
+    position: relative; /* Required for positioning buttons */
+    overflow: hidden;
+    width: 250px; /* Adjust card width to keep uniform size */
+}
+
+/* Hover effect */
+.card:hover {
+    transform: translateY(-10px) !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7) !important;
+    border-color: #ff0080 !important;
+}
+
+/* Card Body text */
+.card-body {
+    color: #ffffff !important;
+}
+
+/* Card Title */
+.card-title {
+    color: #00ff80 !important;
+    font-weight: bold !important;
+}
+
+/* Card Text */
+.card-text {
+    color: #cccccc !important;
+}
+
+/* Card Image - Reduced size and fixed height for uniformity */
+.card-img-top {
+    border-radius: 15px 15px 0 0 !important;
+    filter: brightness(0.9) contrast(1.1) !important;
+    width: 100% !important;
+    height: 180px !important;  /* Adjust as needed */
+    object-fit: contain !important; /* Maintain image aspect ratio */
+}
+</style>
+     </body>
+     </html>
+     
